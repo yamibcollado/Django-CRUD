@@ -14,8 +14,9 @@
                     <p class="fs-4 fw-medium">{{tareas.titulo}}</p>      
                     <p>{{tareas.descripcion}}</p>
                     <p>Autor: {{tareas.usuario.username}}</p>
+                    {%if tareas.dia_completada|date:"M j Y"%}
                     <p>Fecha: {{ tareas.dia_completada|date:"M j Y"}}</p>          
-                    
+                    {%endif%}
                     </a>
                 {% endfor %}
             </ul>
