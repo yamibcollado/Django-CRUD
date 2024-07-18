@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <h1 class="fs-2 text-center display-3 py-2"> Tareas pendientes</h1>
+
+            <ul class="list-group lh-1">
+                {% for tareas in tareas %}
+                <a class="list-group-item" href="{% url 'tarea_detalle' tareas.id %}">
+                    <p class="fs-4 fw-medium">{{tareas.titulo}}</p>      
+                    <p>{{tareas.descripcion}}</p>
+                    <p>Autor: {{tareas.usuario.username}}</p>
+                    <p>Fecha: {{ tareas.dia_completada|date:"M j Y"}}</p>          
+                    
+                    </a>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

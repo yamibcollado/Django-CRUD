@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <h1>Crear Tarea</h1>
+
+            <form action="" method="POST" class="card card-body"> 
+                
+                {% csrf_token %}
+                {{ form}}
+                <button class="btn btn-dark">   
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
